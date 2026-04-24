@@ -156,6 +156,46 @@
   object-fit: cover;
   border-radius: 10px;
 }
+.btn-ver-galeria {
+  margin-top: 20px;
+  background: linear-gradient(45deg, #d4af7f, #f5e0b0);
+  color: #5c4a36;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-ver-galeria:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+}
+.btn-fechar {
+  background: none;
+  border: 1px solid #d4af7f;
+  color: #5c4a36;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-fechar:hover {
+  background: #d4af7f;
+  color: white;
+}
+.galeria-capa-container {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.btn-ver-galeria {
+  margin-top: 15px;
+}
   </style>
 </head>
 
@@ -224,11 +264,18 @@
 <section id="galeria" class="container fade-up">
   <h2 class="titulo-luxo">Galeria</h2>
 
-  <div class="galeria-capa" data-bs-toggle="modal" data-bs-target="#modalGaleria">
-    <img src="img/f1.jpg" class="img-fluid">
-    <div class="overlay-galeria">
-      <span>Ver Coleção Completa</span>
+  <div class="galeria-capa-container">
+
+    <div class="galeria-capa" data-bs-toggle="modal" data-bs-target="#modalGaleria">
+      <img src="img/f1.jpg" class="img-fluid">
+      <div class="overlay-galeria">
+      </div>
     </div>
+
+    <button class="btn-ver-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria">
+      Ver Galeria Completa
+    </button>
+
   </div>
 </section>
 
@@ -296,6 +343,12 @@
 <div class="modal fade" id="modalGaleria" tabindex="-1">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content p-3">
+
+      <div style="text-align: right;">
+  <button type="button" class="btn-fechar" data-bs-dismiss="modal">
+    Voltar
+  </button>
+</div>
 
       <div class="row g-2">
         <div class="col-6 col-md-4"><img src="img/f1.jpg" class="img-fluid rounded"></div>
