@@ -112,6 +112,44 @@
   }
 }
     }
+    .galeria-capa {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  cursor: pointer;
+}
+
+.galeria-capa img {
+  width: 100%;
+  border-radius: 15px;
+  transition: 0.4s;
+}
+
+.galeria-capa:hover img {
+  transform: scale(1.03);
+}
+
+.overlay-galeria {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.galeria-capa:hover .overlay-galeria {
+  opacity: 1;
+}
+
+.overlay-galeria span {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
   </style>
 </head>
 
@@ -179,10 +217,12 @@
 
 <section id="galeria" class="container fade-up">
   <h2 class="titulo-luxo">Galeria</h2>
-  <div class="row g-2">
-    <div class="col-md-4 mb-4"><img src="img/f1.jpg" class="img-fluid shadow w-100" style="border-radius: 10px; object-fit: cover; height: 500px;"></div>
-    <div class="col-md-4 mb-4"><img src="img/f2.jpg" class="img-fluid shadow w-100" style="border-radius: 10px; object-fit: cover; height: 500px;"></div>
-    <div class="col-md-4 mb-4"><img src="img/f3.jpg" class="img-fluid shadow w-100" style="border-radius: 10px; object-fit: cover; height: 500px;"></div>
+
+  <div class="galeria-capa" data-bs-toggle="modal" data-bs-target="#modalGaleria">
+    <img src="img/f1.jpg" class="img-fluid">
+    <div class="overlay-galeria">
+      <span>Ver Coleção Completa</span>
+    </div>
   </div>
 </section>
 
@@ -247,5 +287,21 @@
   window.addEventListener('scroll', showOnScroll);
   showOnScroll();
 </script>
+<div class="modal fade" id="modalGaleria" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-3">
+
+      <div class="row g-2">
+        <div class="col-6 col-md-4"><img src="img/f1.jpg" class="img-fluid rounded"></div>
+        <div class="col-6 col-md-4"><img src="img/f2.jpg" class="img-fluid rounded"></div>
+        <div class="col-6 col-md-4"><img src="img/f3.jpg" class="img-fluid rounded"></div>
+        <div class="col-6 col-md-4"><img src="img/f4.jpg" class="img-fluid rounded"></div>
+        <div class="col-6 col-md-4"><img src="img/f5.jpg" class="img-fluid rounded"></div>
+        <div class="col-6 col-md-4"><img src="img/f6.jpg" class="img-fluid rounded"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
 </body>
 </html>
